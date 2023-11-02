@@ -7,7 +7,7 @@
 <body>
     <h1>Trang đăng ký người dùng</h1>
 
-    <form method="POST" action="{{ route('register') }}">
+    <form method="POST" action="/user/register">
         @csrf
 
         <div>

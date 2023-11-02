@@ -39,8 +39,8 @@ class LoginController extends Controller
         //    dd($request -> input());
 
         $this->validate($request ,[
-            'email'=>'required|',
-                // 'email'=>'required|email:filter',
+
+                'email'=>'required|email:filter',
                 'password'=>'required'
              ]);
 
@@ -48,7 +48,7 @@ class LoginController extends Controller
                 'email'=> $request -> input('email'),
                 'password' => $request -> input('password'),
                 // 'level' => 1
-                // admin
+
              ], $request -> input ('remember'))) {
 
                 return redirect()-> route('admin');
@@ -56,6 +56,8 @@ class LoginController extends Controller
              Session::flash('error','Email hoặc Password không đúng!');
              return redirect() ->back();
         }
+
+
 
 
 
