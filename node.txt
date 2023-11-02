@@ -1,0 +1,39 @@
+php artisan make:controller TenController --resource
+php artisan make:controller Controllername
+ php artisan make:controller Admin/Users/LoginController -mc
+
+composer global require laravel/installer
+
+
+php artisan make:model News
+php arisan make:model News --migration
+
+
+php artisan make:migration TenMigrate  : Tạo migrations thông thường.
+php artisan make:migration TenMigrate --create=TableName  : Tạo migrations cho bảng.
+php artisan make:migration TenMigrate --table=TableName  : Tạo migrations chỉnh sửa bảng.
+-Chú Thích: TenMigrate,TableName là các thông số các bạn có thể tùy chỉnh.
+
+ php  artisan migrate
+ php artisan tinker
+ echo bcrypt('2003');  => exit
+
+ @yield('content') controller home -> main
+
+php artisan make:model --migration --controller Menu
+ php artisan make:request Menu/CreateFormRequest
+
+"files": [
+            "app/helpers/helper.php"
+        ]
+=>>>>>>>autoload
+composer dump-autoload
+
+
+--------------------------------------------------------------
+  <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
