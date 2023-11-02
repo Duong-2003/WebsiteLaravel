@@ -1,19 +1,38 @@
-<!-- resources/views/register.blade.php -->
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Đăng ký người dùng</title>
+    @include('AdminViews.head')
+    <title>{{ $tittle }}</title>
 </head>
 <body>
     <h1>Trang đăng ký người dùng</h1>
-    <!-- Định nghĩa form đăng ký người dùng -->
+
     <form method="POST" action="{{ route('register') }}">
         @csrf
-        <!-- Các trường thông tin người dùng -->
-        <label for="name">Họ và tên:</label>
-        <input type="text" name="name" id="name">
-        <!-- ... Các trường thông tin khác ... -->
-        <button type="submit">Đăng ký</button>
+
+        <div>
+            <label for="name">Tên người dùng:</label>
+            <input type="text" id="name" name="name" required autofocus>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+        </div>
+
+        <div>
+            <label for="password">Mật khẩu:</label>
+            <input type="password" id="password" name="password" required>
+        </div>
+
+        <div>
+            <label for="password_confirmation">Xác nhận mật khẩu:</label>
+            <input type="password" id="password_confirmation" name="password_confirmation" required>
+        </div>
+
+        <div>
+            <button type="submit">Đăng ký</button>
+        </div>
     </form>
 </body>
 </html>

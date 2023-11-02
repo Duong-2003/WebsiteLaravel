@@ -1,6 +1,12 @@
 <?php
 
+use App\Http\Controllers\MainController;
+use App\Http\Controllers\UsersController\ProfileController;
+use App\Http\Controllers\UsersController\LoginController;
+use App\Http\Controllers\UsersController\RegisterController;
+use App\Http\Controllers\UsersController\UserController;
 use Illuminate\Support\Facades\Route;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -17,19 +23,25 @@ use Illuminate\Support\Facades\Route;
 //     return view('welcome');
 // });
 
+
+
 Route::prefix('users')->group(function () {
-    // Đăng ký người dùng
-    Route::post('/register', [UserController::class, 'register'])->name('users.register');
+    Route::get('/register', [RegisterController::class, 'showRegisterForm'])->name('register');
+    Route::post('/register', [RegisterController::class, 'storeRegister'])->name('register');
 
-    // Đăng nhập người dùng
-    Route::post('/login', [UserController::class, 'login'])->name('users.login');
 
-    // Đăng xuất người dùng
-    Route::post('/logout', [UserController::class, 'logout'])->name('users.logout');
+   
+    Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
+    Route::post('/login', [LoginController::class, 'storeLogin'])->name('login');
 
-    // Xem thông tin người dùng đã đăng nhập
-    Route::get('/profile', [UserController::class, 'profile'])->name('users.profile');
 
-    // Cập nhật thông tin người dùng đã đăng nhập
-    Route::put('/profile', [UserController::class, 'updateProfile'])->name('users.update_profile');
+
+
+
+    Route::get('/profile', [ProfileController::class, 'showProfileFrom'])->name('profile');
+    Route::post('/profile', [ProfileController::class, 'storeProfile'])->name('profile');
+
+    Route::post ('/admin',[MainController::class,'main'])->name('admin');
+
 });
+
