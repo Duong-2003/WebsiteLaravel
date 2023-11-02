@@ -3,7 +3,7 @@
 
 <head>
     @include('AdminViews.head')
-    <title>{{ $tittle }}</title>
+    {{-- <title>{{ $tittle }}</title> --}}
 
 </head>
 

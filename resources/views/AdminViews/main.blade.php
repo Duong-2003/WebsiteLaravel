@@ -91,7 +91,7 @@
   <div class="col" >
     <button class="btn btn-primary">Trang quản trị admin</button>
     @include('AdminViews.alert')
-    
+
     @yield('content')
 </div>
 <br>

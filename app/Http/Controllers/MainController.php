@@ -15,7 +15,7 @@ class MainController extends Controller
             'tittle' =>'Trang Quản Trị Admin'
         ]);
     }
-    
+
 
     /**
      * Show the form for creating a new resource.
