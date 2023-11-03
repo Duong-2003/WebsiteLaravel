@@ -6,8 +6,11 @@
 
 use App\Http\Controllers\AdminController\Products\ProductController;
 use App\Http\Controllers\AdminController\RegisterController;
+use App\Http\Controllers\AdminController\Users\ForgotPasswordController;
 use App\Http\Controllers\AdminController\Users\LoginController;
+use App\Http\Controllers\AdminController\Users\ResetPasswordController;
 use App\Http\Controllers\MainController;
+
 use App\Http\Controllers\WebsiteController\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -86,3 +89,7 @@ Route::prefix('users')->group(function () {
 // ____________________________________Route Website_________________________________________________
 Route::get('/website', [WebsiteController::class, 'index'])->name('website');
 // Route::post('/login', [LoginController::class, 'storeLogin'])->name('login.post');
+Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
