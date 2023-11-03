@@ -5,9 +5,12 @@
 
 
 use App\Http\Controllers\AdminController\Products\ProductController;
-use App\Http\Controllers\AdminController\RegisterController;
+
+
 use App\Http\Controllers\AdminController\Users\ForgotPasswordController;
 use App\Http\Controllers\AdminController\Users\LoginController;
+use App\Http\Controllers\AdminController\Users\ProfileController;
+use App\Http\Controllers\AdminController\Users\RegisterController;
 use App\Http\Controllers\AdminController\Users\ResetPasswordController;
 use App\Http\Controllers\MainController;
 
@@ -49,7 +52,7 @@ Route::prefix('users')->group(function () {
         return view('AdminViews.profile');
     })->name('profile');
     // Route::get('/profile', [ProfileController::class, 'showProfileFrom'])->name('profile');
-    Route::post('/profile', [\App\Http\Controllers\AdminController\ProfileController::class, 'storeProfile'])->name('profile.post');
+    Route::post('/profile', [ProfileController::class, 'storeProfile'])->name('profile.post');
 
     // Route::get ('/admin',[MainController::class,'main']) ->name('admin');
     // Route::post ('/admin',[MainController::class,'main']) ->name('admin.post');

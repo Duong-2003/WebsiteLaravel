@@ -16,97 +16,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script src="/admin/template/js/main.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous">
+    </script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 </head>
 <style>
-    .popup {
-  position: relative;
-  width: 320px;
-  height: fit-content;
-  background: #FFFFFF;
-  box-shadow: 0px 187px 75px rgba(0, 0, 0, 0.01), 0px 105px 63px rgba(0, 0, 0, 0.05), 0px 47px 47px rgba(0, 0, 0, 0.09), 0px 12px 26px rgba(0, 0, 0, 0.1), 0px 0px 0px rgba(0, 0, 0, 0.1);
-  border-radius: 13px;
-}
 
-.form {
-  display: flex;
-  flex-direction: column;
-  align-items: flex-start;
-  padding: 20px;
-  gap: 20px;
-}
 
-.icon {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 60px;
-  height: 60px;
-  background: #ECF1FD;
-  box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
-  border-radius: 5px;
-}
-
-.note {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.title {
-  font-style: normal;
-  font-weight: 700;
-  font-size: 17px;
-  line-height: 24px;
-  color: #2B2B2F;
-}
-
-.subtitle {
-  font-style: normal;
-  font-weight: 600;
-  font-size: 13px;
-  line-height: 18px;
-  color: #5F5D6B;
-}
-
-.input_field {
-  width: 100%;
-  height: 42px;
-  padding: 0 0 0 12px;
-  border-radius: 5px;
-  outline: none;
-  border: 1px solid #e5e5e5;
-  filter: drop-shadow(0px 1px 0px #efefef)
-    drop-shadow(0px 1px 0.5px rgba(239, 239, 239, 0.5));
-  transition: all 0.3s cubic-bezier(0.15, 0.83, 0.66, 1);
-}
-
-.input_field:focus {
-  border: 1px solid transparent;
-  box-shadow: 0px 0px 0px 1px #2B2B2F;
-  background-color: transparent;
-}
-
-.form button.submit {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  padding: 10px 18px;
-  gap: 10px;
-  width: 100%;
-  height: 42px;
-  background: linear-gradient(180deg, #4480FF 0%, #115DFC 50%, #0550ED 100%);
-  box-shadow: 0px 0.5px 0.5px #EFEFEF, 0px 1px 0.5px rgba(239, 239, 239, 0.5);
-  border-radius: 5px;
-  border: 0;
-  font-style: normal;
-  font-weight: 600;
-  font-size: 12px;
-  line-height: 15px;
-  color: #ffffff;
-}
 
 </style>
 <body>

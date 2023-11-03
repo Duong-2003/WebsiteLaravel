@@ -4,11 +4,12 @@
 <head>
 
     @include('AdminViews.head')
-    {{-- <title>{{ $tittle }}</title> --}}
+    <title>Đăng nhập Admin</title>
 
     <style>
         a{
             text-decoration: none;
+            color: #175a9d;
         }
         .container {
             display: flex;
@@ -100,10 +101,7 @@
 
         }
 
-        a {
-            color: #175a9d;
 
-        }
 
         .input {
             box-shadow: inset 4px 4px 4px rgba(165, 163, 163, 0.315),

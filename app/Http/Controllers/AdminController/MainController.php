@@ -27,6 +27,7 @@ class MainController extends Controller
         return view('AdminViews.main' ,[
             'tittle' =>'Trang Quản Trị Admin'
         ]);
+        
     }
 
 

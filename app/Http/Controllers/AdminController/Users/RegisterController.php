@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\AdminController;
+namespace App\Http\Controllers\AdminController\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -50,7 +50,8 @@ class RegisterController extends Controller
 
         // Thực hiện các hành động khác sau khi đăng ký thành công
 
-        return redirect()->route('login')
+        return redirect()->route('admin')
+        // return redirect()->route('login')
         ->with('success', 'Đăng ký thành công! Vui lòng đăng nhập.');
     }
 
