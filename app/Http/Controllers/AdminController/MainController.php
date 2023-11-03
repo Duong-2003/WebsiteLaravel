@@ -1,22 +1,34 @@
 <?php
 
-namespace App\Http\Controllers\UsersController;
+namespace App\Http\Controllers;
 
-use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
-class ProfileController extends Controller
+class MainController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function showProfileFrom()
+//     public function index()
+// {
+//     if (Auth::user()->role === 'admin') {
+//         // Hiển thị chức năng quản trị viên
+//         // ...
+//         return view('admin.dashboard');
+//     } elseif (Auth::user()->role === 'user') {
+//         // Hiển thị chức năng người dùng thông thường
+//         // ...
+//         return view('user.dashboard');
+//     }
+// }
+    public function main()
     {
-        return view('AdminViews.profile' ,[
-            'tittle' =>'Profile'
+        return view('AdminViews.main' ,[
+            'tittle' =>'Trang Quản Trị Admin'
         ]);
-
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -29,7 +41,7 @@ class ProfileController extends Controller
     /**
      * Store a newly created resource in storage.
      */
-    public function storeProfile(Request $request)
+    public function store(Request $request)
     {
         //
     }

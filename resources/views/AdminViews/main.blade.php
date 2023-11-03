@@ -39,7 +39,7 @@
 
 
 
-<div class="container1 " style="display: flex">
+{{-- <div class="container1 " style="display: flex">
 
   <h1 class="visually-hidden">Sidebars examples</h1>
   <div class="col-5 flex-shrink-0 p-3 text-bg-dark" style="width: 280px;" style="position: fixed; top : 0px;">
@@ -72,6 +72,18 @@
           Danh mục Đơn hàng
         </a>
       </li>
+      <li >
+        <a href="ListOrder.php" class="nav-link text-white" id="order">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+          Đăng ký tài khoản Admin
+        </a>
+      </li>
+      <li >
+        <a href="ListOrder.php" class="nav-link text-white" id="order">
+          <svg class="bi pe-none me-2" width="16" height="16"><use xlink:href="#grid"/></svg>
+          Xem Profile Amdin
+        </a>
+      </li>
     </ul>
     <hr>
     <div class="dropdown">
@@ -89,13 +101,49 @@
   <div class="b-example-divider b-example-vr" ></div>
 
   <div class="col" >
-    <button class="btn btn-primary">Trang quản trị admin</button>
+    <button class="btn btn-primary  ">Trang quản trị admin</button>
     @include('AdminViews.alert')
 
     @yield('content')
 </div>
-<br>
+<br> --}}
 
+
+<!-- Trong file resources/views/admin/admin_layout.blade.php -->
+<!-- Trong file resources/views/admin/admin_layout.blade.php -->
+<body>
+    <!-- Navbar Bootstrap -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark d-flex flex-column align-item-start">
+        <a class="navbar-brand" href="#">Trang Admin</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item active">
+                    <a class="nav-link" href="#">Trang chủ</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Danh mục</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#">Sản phẩm</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Content Bootstrap -->
+    <div class="container">
+        <h1>Dashboard</h1>
+        <p>Chào mừng đến trang quản trị viên!</p>
+    </div>
+
+    <!-- Import các tệp JavaScript của Bootstrap -->
+    <script src="{{ asset('js/bootstrap.js') }}"></script>
+    <!-- Các tệp JavaScript tùy chỉnh khác -->
+</body>
 
 
 

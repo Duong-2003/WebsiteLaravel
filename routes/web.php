@@ -1,10 +1,13 @@
 <?php
 
-use App\Http\Controllers\MainController;
-use App\Http\Controllers\UsersController\ProfileController;
-use App\Http\Controllers\UsersController\LoginController;
-use App\Http\Controllers\UsersController\RegisterController;
-use App\Http\Controllers\UsersController\UserController;
+
+
+
+use App\Http\Controllers\AdminController\LoginController;
+use App\Http\Controllers\AdminController\Products\ProductController;
+use App\Http\Controllers\AdminController\RegisterController;
+
+use App\Http\Controllers\WebsiteController\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -42,7 +45,7 @@ Route::prefix('users')->group(function () {
         return view('AdminViews.profile');
     })->name('profile');
     // Route::get('/profile', [ProfileController::class, 'showProfileFrom'])->name('profile');
-    Route::post('/profile', [ProfileController::class, 'storeProfile'])->name('profile.post');
+    Route::post('/profile', [\App\Http\Controllers\AdminController\ProfileController::class, 'storeProfile'])->name('profile.post');
 
     // Route::get ('/admin',[MainController::class,'main']) ->name('admin');
     // Route::post ('/admin',[MainController::class,'main']) ->name('admin.post');
@@ -58,4 +61,25 @@ Route::prefix('users')->group(function () {
 
         Route::post('/admin', [MainController::class, 'main'])->name('admin.post');
     });
+
+    Route::get('/products', [ProductController::class, 'index'])->name('products');
+
 });
+
+
+// Route::middleware(['auth', 'role:admin'])->group(function () {
+//     // Các route chỉ dành cho vai trò "admin"
+//     // ...
+// });
+
+// Route::middleware(['auth', 'role:user'])->group(function () {
+//     // Các route chỉ dành cho vai trò "user"
+//     // ...
+// });
+
+// Route::get('/product', [ProductController::class, 'index'])->name('product1');
+
+
+// ____________________________________Route Website_________________________________________________
+Route::get('/website', [WebsiteController::class, 'index'])->name('website');
+// Route::post('/login', [LoginController::class, 'storeLogin'])->name('login.post');

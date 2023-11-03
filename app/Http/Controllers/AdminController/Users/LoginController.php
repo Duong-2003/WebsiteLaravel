@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Controllers\UsersController;
+namespace App\Http\Controllers\AdminController\Users;
 
 use App\Http\Controllers\Controller;
 use App\Models\User;
@@ -56,11 +56,6 @@ class LoginController extends Controller
              Session::flash('error','Email hoặc Password không đúng!');
              return redirect() ->back();
         }
-
-
-
-
-
 
 
 

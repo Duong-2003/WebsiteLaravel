@@ -1,21 +1,19 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\WebsiteController;
 
+use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
-class MainController extends Controller
+class LoginwebController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
-    public function main()
+    public function index()
     {
-        return view('AdminViews.main' ,[
-            'tittle' =>'Trang Quản Trị Admin'
-        ]);
+        return view("");
     }
-
 
     /**
      * Show the form for creating a new resource.

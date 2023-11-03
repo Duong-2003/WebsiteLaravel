@@ -1,9 +1,12 @@
 
-@extends('AdminViews.main')
+{{-- @extends('AdminViews.main')
 
 @section('content')
-    <ul>
-        <li>Item 1</li>
-        <li>Item 1</li>
-    </ul>
+    @parent
+
+    <p>This is appended to the master sidebar.</p>
 @endsection
+
+@section('content')
+    <p>This is my body content.</p>
+@endsection --}}
