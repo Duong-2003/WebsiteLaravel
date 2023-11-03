@@ -15,7 +15,7 @@ class ProductController extends Controller
         $products = Product::all();
 
         // Trả về view hiển thị danh sách sản phẩm
-        return view('WebsiteViews.www.productweb', compact('products'));
+        // return view('WebsiteViews.www.productweb', compact('products'));
     }
 
     public function create()

@@ -3,10 +3,11 @@
 
 
 
-use App\Http\Controllers\AdminController\LoginController;
+
 use App\Http\Controllers\AdminController\Products\ProductController;
 use App\Http\Controllers\AdminController\RegisterController;
-
+use App\Http\Controllers\AdminController\Users\LoginController;
+use App\Http\Controllers\MainController;
 use App\Http\Controllers\WebsiteController\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -61,9 +62,11 @@ Route::prefix('users')->group(function () {
 
         Route::post('/admin', [MainController::class, 'main'])->name('admin.post');
     });
-
-    Route::get('/products', [ProductController::class, 'index'])->name('products');
-
+    Route::middleware(['auth'])->get('/products', function () {
+        return view('WebsiteViews.www.productweb');
+    })->name('products');
+    // Route::get('/products', [ProductController::class, 'index'])->name('products');
+    // Route::post('/products', [ProductController::class, 'index'])->name('products.post');
 });
 
 
