@@ -16,21 +16,20 @@ class LoginController extends Controller
      */
     public function showLoginForm()
         {
+            $users = User::all();
+            return view('AdminViews.login', compact('users'));
 
-            return view('AdminViews.login' ,[
-                'tittle' =>'Đăng Nhập AdminGroup'
-            ]);
         }
 
     /**
      * Show the form for creating a new resource.
      */
-    // public function create()
-    // {
-    //     return view('AdminViews.login' ,[
-    //         'tittle' =>'Đăng Nhập AdminGroup'
-    //     ]);
-    // }
+    public function create()
+    {
+        return view('AdminViews.login' ,[
+            'tittle' =>'Đăng Nhập AdminGroup'
+        ]);
+    }
 
     /**
      * Store a newly created resource in storage.
@@ -65,7 +64,9 @@ class LoginController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return view('AdminViews.login' ,[
+            'tittle' =>'Đăng Nhập AdminGroup'
+        ]);
     }
 
     /**

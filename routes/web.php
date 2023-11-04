@@ -63,7 +63,7 @@ Route::prefix('users')->group(function () {
 
         Route::get('/admin', function () {
             $tittle = "Trang Quản Trị Admin";
-            return view('AdminViews.main', compact('tittle'));
+            return view('AdminViews.home', compact('tittle'));
         })->name('admin');
 
         Route::post('/admin', [MainController::class, 'main'])->name('admin.post');

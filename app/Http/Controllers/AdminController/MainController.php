@@ -24,10 +24,10 @@ class MainController extends Controller
 // }
     public function main()
     {
-        return view('AdminViews.main' ,[
+        return view('AdminViews.home' ,[
             'tittle' =>'Trang Quản Trị Admin'
         ]);
-        
+
     }
 
 
