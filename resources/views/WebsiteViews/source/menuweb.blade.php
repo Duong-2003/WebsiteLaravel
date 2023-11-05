@@ -93,6 +93,9 @@
             <img src="../Public/img/Icons/icon_after_title.webp" alt="">
         </div>
 
+        <div style="text-align:center">
+            <img src="../img/icon_after_title.webp" alt="">
+        </div>
 </body>
 </html>
 
