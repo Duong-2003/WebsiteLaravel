@@ -12,8 +12,11 @@ use App\Http\Controllers\AdminController\Users\LoginController;
 use App\Http\Controllers\AdminController\Users\ProfileController;
 use App\Http\Controllers\AdminController\Users\RegisterController;
 use App\Http\Controllers\AdminController\Users\ResetPasswordController;
-use App\Http\Controllers\MainController;
 
+
+use App\Http\Controllers\AdminController\MainController;
+use App\Http\Controllers\WebsiteController\LoginwebController;
+use App\Http\Controllers\WebsiteController\RegisterwebController;
 use App\Http\Controllers\WebsiteController\WebsiteController;
 use Illuminate\Support\Facades\Route;
 
@@ -29,9 +32,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-// Route::get('/', function () {
-//     return view('welcome');
-// });
+Route::get('/website', function () {
+    return view('AdminViews.index');
+});
 
 
 // ____________________________________Route Admin_________________________________________________
@@ -66,7 +69,13 @@ Route::prefix('users')->group(function () {
             return view('AdminViews.home', compact('tittle'));
         })->name('admin');
 
+
+
         Route::post('/admin', [MainController::class, 'main'])->name('admin.post');
+        Route::get('/admin/create', [MainController::class, 'createAdmin'])->name('admin.create');
+        // Route::get('/admin/create', [MainController::class, 'createAdmin'])->name('admin.edit');
+        // Route::post('/admin/update', [MainController::class, 'updateAdmin'])->name('admin.update');
+        // Route::post('/admin/destroy', [MainController::class, 'destroyAdmin'])->name('admin.destroy');
     });
     Route::middleware(['auth'])->get('/products', function () {
         return view('WebsiteViews.www.productweb');
@@ -92,7 +101,20 @@ Route::prefix('users')->group(function () {
 // ____________________________________Route Website_________________________________________________
 Route::get('/website', [WebsiteController::class, 'index'])->name('website');
 // Route::post('/login', [LoginController::class, 'storeLogin'])->name('login.post');
-Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
-Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
-Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
-Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+
+    Route::get('/registerweb', [RegisterwebController::class, 'showRegisterWebForm'])->name('registerweb');
+    Route::post('/registerweb', [RegisterwebController::class, 'storeRegisterweb'])->name('registerweb.post');
+
+
+
+    Route::get('/loginweb', [LoginwebController::class, 'showLoginWebForm'])->name('loginweb');
+    Route::post('/loginweb', [LoginwebController::class, 'storeLoginWeb'])->name('loginweb.post');
+
+
+// Route::get('/forgot-password', [ForgotPasswordController::class, 'showLinkRequestForm'])->name('password.request');
+// Route::post('/forgot-password', [ForgotPasswordController::class, 'sendResetLinkEmail'])->name('password.email');
+// Route::get('/reset-password/{token}', [ResetPasswordController::class, 'showResetForm'])->name('password.reset');
+// Route::post('/reset-password', [ResetPasswordController::class, 'reset'])->name('password.update');
+
+

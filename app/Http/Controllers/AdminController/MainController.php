@@ -1,7 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\AdminController;
 
+use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -24,9 +26,9 @@ class MainController extends Controller
 // }
     public function main()
     {
-        return view('AdminViews.home' ,[
-            'tittle' =>'Trang Quản Trị Admin'
-        ]);
+
+    $users = User::all();
+    return view('AdminViews.home',) ->with('users',$users);
 
     }
 
@@ -34,9 +36,9 @@ class MainController extends Controller
     /**
      * Show the form for creating a new resource.
      */
-    public function create()
+    public function createAdmin()
     {
-        //
+        return view('AdminViews.create');
     }
 
     /**
@@ -44,7 +46,9 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $input=$request->all();
+        User::create($input);
+        return redirect('student') ->with('success','Users Add');
     }
 
     /**

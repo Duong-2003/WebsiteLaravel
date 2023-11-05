@@ -11,7 +11,7 @@
 
 @if (Session::has('error'))
 
-<div class="alert alert-danger">
+<div class="btn" style="color:red">
 
     {{ Session::get('error') }}
 
@@ -19,7 +19,7 @@
 @endif
 
 @if (Session::has('success'))
-<div class="alert alert-success">
+<div class="btn" style="color:greenyellow">
     {{ Session::get('success') }}
 
 </div>

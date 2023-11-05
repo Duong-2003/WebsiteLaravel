@@ -13,9 +13,8 @@
     </script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
 
-    <link rel="icon" type="image/x-icon" href="{{ asset('/public/img/favicon2.png') }}">
-    {{-- <script src="{{ asset('/public/admin/template/js/main.js') }}"></script> --}}
-    {{-- <meta name="csrf-token" content="{{ csrf_token() }}"> --}}
+    <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon2.png') }}">
+   
     @yield('head')
 </head>
 

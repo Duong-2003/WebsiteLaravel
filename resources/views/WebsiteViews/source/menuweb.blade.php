@@ -1,122 +1,98 @@
-<style>
-    nav {
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <title>Document</title>
+ <style>
+ #vpp{
+    text-align: center;
 
-        background-image: linear-gradient(to bottom, #858585, #7f7f8d);
-    }
+    /* animation: moveRightLeft 2s infinite; */
+    /* animation: shake 0.5s infinite; */
+    border-right:1px solid rgb(53 80 121 / 25%);
 
-    li {
-        list-style: none;
-    }
 
-    nav #menu li a {
-        color: #fff;
-        text-decoration: none;
-        display: block;
-        padding: 10px 15px;
+ }
+ #vpp:nth-child(6n) {
+    /* thay đổi 6 phần tử ko gạch cái cuối */
+  border-right: none;
+}
+ #vpp img {
+  transition: transform 0.3s;
+}
+#vpp a{
+    color:#593e3e;
+}
+#vpp strong:hover {
+  color: #b74646;
+}
+ #vpp:hover img{
+    transform: rotate(45deg);
 
-    }
+ }
 
-    ul#menu {
-        padding: 0;
-    }
 
-    #menu {
-        display: flex;
-        justify-content: space-evenly;
-    }
 
-    #menu a i {
-        color: #ba4646;
-    }
 
-    nav #menu li:hover a {
-        background-image: linear-gradient(to bottom, #4f4d4d, #313133);
-        transition: all 0.3s;
-    }
-
-    nav #menu li:hover a.menu-dropdown {
-        background-image: none;
-        transition: none;
-    }
-
-    .dropdown-content a:hover {
-        background-color: #4f4d4d;
-    }
-
-    @media screen and (max-width: 456px) {
-        #menu {
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-
-        }
-    }
-
-    @media screen and (max-width: 1190px) {
-        #menu {
-            flex-wrap: wrap;
-            justify-content: space-evenly;
-
-        }
-    }
 </style>
 
 </head>
 
 
 <body>
-
-
-    <div class="dropdown" id="ic-user" style="display: none;">
-        <a href="#">
-            <img src="https://avatars.githubusercontent.com/u/125018793?s=400&u=d66a7dc1d555eb23d223fe07b638e9701a5735be&v=4"
-                alt="" width="32" height="32" class="rounded-circle me-2">
-            <strong></strong>
-        </a>
-        <div class="dropdown-content">
-            <a href="#" class ="menu-dropdown">Thông tin</a>
-            <a href="" class= "menu-dropdown">Đăng xuất</a>
-        </div>
-    </div>
-    <nav id="nav-menu">
-
+    <!-- <hr style="color: #af5b63;"> -->
         <div class="container">
-            <ul id="menu">
-                <li><a href="website.php">
-                        <i class="fa fa-home" aria-hidden="true"></i>
-                        Trang chủ
-                    </a></li>
+            <div class="row "  style="align-items: center;margin-top:20px">
 
+                <div class="col-1"></div>
 
-                <!-- <li><a href="login.php">
-                            <i class="fa fa-user-circle" aria-hidden="true"  ></i>
-                            Đăng nhập
-                            </a></li>
-
-
-                            <li><a href="register.php" >
-                            <i class="fa fa-user-plus" aria-hidden="true"  ></i>
-                            Đăng kí
-                            </a></li> -->
+                <div class="col-2" id="vpp">
+                   <a href=""> <img src="../img/cate_1.webp" alt=""></a>
+                   <div class="py-3"><a href=""><strong>VPP HỌC SINH</strong></a></div>
+                </div>
 
 
 
 
-
-                <li><a href="./cart.php">
-                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
-                        Giỏ hàng
-                    </a></li>
-
+                <div class="col-2" id="vpp">
+                    <a href=""><img src="../img/cate_2.webp" alt=""></a>
+                    <div class="py-3"><a href=""><strong>VPP VĂN PHÒNG</strong></a></div>
+                </div>
 
 
+                <div class="col-2" id="vpp" style="margin-top:6px">
+                    <a href=""><img src="../img/cate_3.webp" alt=""></a>
+                    <div class="py-3"><a href=""><strong>PHỤ KIỆN</strong></a></div>
+                </div>
 
 
-            </ul>
+
+                <div class="col-2" id="vpp">
+                  <a href="">  <img src="../img/cate_4.webp" alt=""></a>
+                    <div class="py-3"><a href=""><strong>BALO-TÚI SÁCH</strong></a></div>
+                </div>
+
+                <div class="col-2" id="vpp">
+                  <a href="">  <img src="../img/cate_5.webp" alt=""></a>
+                    <div class="py-3"><a href=""><strong>DỤNG CỤ VĂN PHÒNG</strong></a></div>
+                </div>
+
+                <div class="col-1"></div>
+            </div>
         </div>
-    </nav>
 
 
+
+
+        <div class="" style="text-align:center">
+            <img src="../Public/img/Icons/icon_after_title.webp" alt="">
+        </div>
 
 </body>
-
 </html>
+

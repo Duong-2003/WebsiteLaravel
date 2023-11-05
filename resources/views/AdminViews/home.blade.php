@@ -71,9 +71,10 @@
                                         <h3 class="panel-title">Danh sách người dùng</h3>
                                     </div>
                                     <div class="col col-xs-6 text-right">
-                                        <button style="float: inline-end; font-size:20px" type="button"
+
+                                     <a href="AdminView.create">   <button style="float: inline-end; font-size:20px" type="button"
                                             class="btn btn-sm btn-primary btn-create">Thêm
-                                            mới</button>
+                                            mới</button></a>
                                     </div>
                                 </div>
                             </div>
@@ -95,7 +96,7 @@
                                     </thead>
                                     <tbody>
 
-                                        @foreach ($users as $user)
+                                        {{-- @foreach ($users as $user)
                                             <tr>
                                                 <td>{{ $user->id }}</td>
                                                 <td>{{ $user->name }}</td>
@@ -104,19 +105,19 @@
                                                 <td>{{ $user->password }}</td>
                                                 <td>{{ $user->created_at }}</td>
                                                 <td>{{ $user->updated_at }}</td>
-                                               
-                                                <td>
-                                                    <a href="{{ route('users.edit', $user->id) }}"
-                                                        class="btn btn-primary">Edit</a>
-                                                    <form action="{{ route('users.destroy', $user->id) }}" method="POST"
-                                                        style="display: inline-block">
+
+                                                <td> --}}
+                                                    {{-- <a href="{{ route('users.edit', $user->id) }}" --}}
+                                                        {{-- class="btn btn-primary">Edit</a> --}}
+                                                    {{-- <form action="{{ route('users.destroy', $user->id) }}" method="POST" --}}
+                                                        {{-- style="display: inline-block"> --}}
                                                         @csrf
-                                                        @method('DELETE')
-                                                        <button type="submit" class="btn btn-danger">Delete</button>
+                                                        {{-- @method('DELETE') --}}
+                                                        {{-- <button type="submit" class="btn btn-danger">Delete</button> --}}
                                                     </form>
                                                 </td>
                                             </tr>
-                                        @endforeach
+                                        {{-- @endforeach --}}
 
                                     </tbody>
                                 </table>
@@ -126,7 +127,7 @@
                                     <div class=" col-xs-12 " style="display: flex;justify-content: center;">
                                         <ul class="pagination hidden-xs pull-right">
                                             <nav aria-label="Page navigation example">
-                                                A <ul class="pagination">
+                                                <ul class="pagination">
                                                     <li class="page-item"><a class="page-link" href="#">Previous</a>
                                                     </li>
                                                     <li class="page-item"><a class="page-link" href="#">1</a></li>

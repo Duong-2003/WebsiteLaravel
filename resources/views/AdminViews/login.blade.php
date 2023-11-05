@@ -130,7 +130,7 @@
                 <div id="admin">
                     <a href="" style="text-decoration: none">Admin</a>
                 </div>
-                @include('AdminViews.alert')
+                @include('alert')
                 <div class="input-block">
                     <input class="input" type="email" id="email" name="email" required=""
                         placeholder="Username">

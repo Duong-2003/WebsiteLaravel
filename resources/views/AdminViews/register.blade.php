@@ -159,7 +159,7 @@
                 <div id="admin">
                     <a href="" style="text-decoration: none">Admin</a>
                 </div>
-                @include('AdminViews.alert')
+                @include('alert')
                 <div class="input-block">
 
                     <input  type="text" class="input"  id="name" name="name" required autofocus
