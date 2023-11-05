@@ -16,7 +16,7 @@
     <link rel="icon" type="image/x-icon" href="{{ asset('img/favicon2.png') }}">
 
     @yield('head') --}}
-    @include('WebsiteViews.source.headweb');
+    {{-- @include('WebsiteViews.source.headweb'); --}}
 </head>
 
     <title>Đăng Ký Users</title>
@@ -168,7 +168,7 @@
     </form> --}}
 
 
-    <div class="container" >
+    <div class="container" style="    margin-top: 12%;margin-left: 25%;">
         <div class="left">
 
             <form method="POST" action="registerweb">
@@ -320,5 +320,5 @@
         </div>
     </div>
 </body>
-@include('WebsiteViews.source.footerweb');
+{{-- @include('WebsiteViews.source.footerweb'); --}}
 </html>

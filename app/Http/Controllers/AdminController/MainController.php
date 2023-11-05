@@ -26,11 +26,19 @@ class MainController extends Controller
 // }
     public function main()
     {
+        //   $users = Auth::user();
+        //     $users = User::all();
+        //     return view('AdminViews.home', compact('users'));
+        // lấy ra toàn bộ user
 
-    $users = User::all();
-    return view('AdminViews.home',) ->with('users',$users);
+        $users = User::all();
+        return view("AdminViews.home", compact("users"));
 
-    }
+
+    // Thực hiện các thao tác khác với đối tượng User
+}
+        // dd($users);
+
 
 
     /**
@@ -46,9 +54,9 @@ class MainController extends Controller
      */
     public function store(Request $request)
     {
-        $input=$request->all();
+        $input = $request->all();
         User::create($input);
-        return redirect('student') ->with('success','Users Add');
+        return redirect('admin/users')->with('success', 'Admin user added successfully');
     }
 
     /**
@@ -56,30 +64,37 @@ class MainController extends Controller
      */
     public function show(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('AdminViews.show')->with('user', $user);
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function editAdmin(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        return view('AdminViews.edit')->with('user', $user);
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function updateAdmin(Request $request, string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $input = $request->all();
+        $user->update($input);
+        return redirect('admin/users')->with('success', 'Admin user updated successfully');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroyAdmin(string $id)
     {
-        //
+        $user = User::findOrFail($id);
+        $user->delete();
+        return redirect('admin/users')->with('success', 'Admin user deleted successfully');
     }
 }

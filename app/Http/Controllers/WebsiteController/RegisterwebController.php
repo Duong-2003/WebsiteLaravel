@@ -46,7 +46,7 @@ class RegisterwebController extends Controller
 
         // Thực hiện các hành động khác sau khi đăng ký thành công
 
-        return redirect()->route('admin')
+        return redirect()->route('loginweb')
         // return redirect()->route('login')
         ->with('success', 'Đăng ký thành công! Vui lòng đăng nhập.');
     }

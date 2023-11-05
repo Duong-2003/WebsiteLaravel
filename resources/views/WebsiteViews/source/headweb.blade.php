@@ -189,12 +189,24 @@
                             <div class="dropdown" id="ic-notuser">
                                 <a href="#" class="nav-link " id="order">
                                     <i class="fa-solid fa-circle-user" style="font-size:25px;color: #5c64b4;"></i>
-                                    <strong style=" font-family: cursive;font-size:25px">USER</strong>
+                                    <strong style=" font-family: cursive;font-size:25px">
+                                        @if (session('users'))
+                                            {{ session('users')->name }}
+                                        @else
+                                            USER
+                                        @endif
+                                    </strong>
                                 </a>
                                 <div class="dropdown-content">
-                                    <a href="{{ route('loginweb') }}" class="menu-dropdown">Đăng nhập</a>
-                                    <a href="{{ route('registerweb') }}" class="menu-dropdown">Đăng ký</a>
+                                    @if (session('users'))
+                                        <a href="#" class="menu-dropdown">Tên người dùng: {{ session('user')->name }}</a>
+                                        <a href="{{ route('logout') }}" class="menu-dropdown">Đăng xuất</a>
+                                    @else
+                                        <a href="{{ route('loginweb') }}" class="menu-dropdown">Đăng nhập</a>
+                                        <a href="{{ route('registerweb') }}" class="menu-dropdown">Đăng ký</a>
+                                    @endif
                                 </div>
+                            </div>
 
 
                         </li>

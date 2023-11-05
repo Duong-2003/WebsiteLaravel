@@ -49,10 +49,15 @@ class LoginwebController extends Controller
 
              ], $request -> input ('remember'))) {
 
-                return redirect()-> route('admin');
+                return redirect()-> route('website');
              }
              Session::flash('error','Email hoặc Password không đúng!');
              return redirect() ->back();
+        }
+        protected function authenticated(Request $request, $users)
+        {
+            // Lưu thông tin người dùng vào phiên làm việc
+            $request->session()->put('users', $users);
         }
     /**
      * Display the specified resource.

@@ -64,13 +64,18 @@
 
                     <button class="btn btn-primary text-center my-3" style="font-size:20px">Trang Quản trị Admin </button>
 
-
+                    @yield('users')
 
 
             </div>
             <div>
-                @yield('content')
+                @yield('users')
+
             </div>
+            <div>
+                @yield('products')
+            </div>
+
           </div>
         </div>
       </div>
@@ -96,7 +101,7 @@ navLinks.forEach(link => {
     // Kiểm tra nếu tab được nhấp có tên là "home"
     if (event.target.getAttribute('name') === 'main') {
       // Chuyển hướng về trang main
-      window.location.href = 'AdminViews/main.blade.php';
+      window.location.href = '{{ ('AdminViews/main.blade.php') }}';
     }
   });
 });

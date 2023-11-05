@@ -42,7 +42,7 @@ class LoginController extends Controller
                 'email'=>'required|email:filter',
                 'password'=>'required'
              ]);
-
+             
              if(Auth::attempt([
                 'email'=> $request -> input('email'),
                 'password' => $request -> input('password'),

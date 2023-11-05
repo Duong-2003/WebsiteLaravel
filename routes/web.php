@@ -32,9 +32,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/website', function () {
-    return view('AdminViews.index');
-});
+// Route::get('/website', function () {
+//     return view('AdminViews.index');
+// });
 
 
 // ____________________________________Route Admin_________________________________________________
@@ -73,9 +73,10 @@ Route::prefix('users')->group(function () {
 
         Route::post('/admin', [MainController::class, 'main'])->name('admin.post');
         Route::get('/admin/create', [MainController::class, 'createAdmin'])->name('admin.create');
-        // Route::get('/admin/create', [MainController::class, 'createAdmin'])->name('admin.edit');
-        // Route::post('/admin/update', [MainController::class, 'updateAdmin'])->name('admin.update');
-        // Route::post('/admin/destroy', [MainController::class, 'destroyAdmin'])->name('admin.destroy');
+
+        Route::get('/admin/create/{id}', [MainController::class, 'editAdmin'])->name('admin.edit');
+        Route::post('/admin/update/{id}', [MainController::class, 'updateAdmin'])->name('admin.update');
+        Route::post('/admin/destroy/{id}', [MainController::class, 'destroyAdmin'])->name('admin.destroy');
     });
     Route::middleware(['auth'])->get('/products', function () {
         return view('WebsiteViews.www.productweb');
@@ -100,6 +101,7 @@ Route::prefix('users')->group(function () {
 
 // ____________________________________Route Website_________________________________________________
 Route::get('/website', [WebsiteController::class, 'index'])->name('website');
+
 // Route::post('/login', [LoginController::class, 'storeLogin'])->name('login.post');
 
 
